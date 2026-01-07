@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Depends, HTTPException
+from fastapi import FastAPI, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from db import get_db
 from schemas import ItemCreate, ItemOut
@@ -30,9 +30,10 @@ async def read_item(
     itemId: int,
     db: AsyncSession = Depends(get_db)
 ):
-    item = await crud.get_item(db, itemId)
-    if not item:
-        raise HTTPException(status_code=404, detail="Item not found")
-    return item
+    try:
+        item = await crud.get_item(db, itemId)
+        return item
+    except Exception as e:
+        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=f"Item not found. Error:{e}")
+    
 
-# 
