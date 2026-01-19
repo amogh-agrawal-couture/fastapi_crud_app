@@ -4,7 +4,7 @@ from fastapi import HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.repositories.item_repository import ItemRepository
-from app.schemas import ItemCreate
+from app.schemas.item import ItemCreate
 from app.models import ItemDB
 class ItemService:
     """

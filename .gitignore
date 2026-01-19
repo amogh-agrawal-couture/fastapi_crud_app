@@ -1,5 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment files
 .env
-.venv
-venv
-__pycache__
-.idea
+.env.docker
+
+# Database
+*.db
+*.sqlite3
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
