@@ -13,3 +13,9 @@ asyncpg
 greenlet
 psycopg2-binary
 redis==7.1.0
+#for pytest
+pytest
+pytest-asyncio
+httpx
+aiosqlite
+fakeredis>=2.21.0
