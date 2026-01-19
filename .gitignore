@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+.env
+.env.docker
+*.db
+*.sqlite3
+.idea/
+.vscode/
+*.swp
+*.swo
